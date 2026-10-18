@@ -1,0 +1,143 @@
+@use "../tools" as *;
+
+.offer {
+	background: linear-gradient(135deg, #f4efe8 0%, #f9eced 100%);
+	&__container {
+		@include flex-column;
+		gap: adapt(46, 32, $tablet);
+	}
+
+	&__header {
+		@include flex-column;
+		align-items: center;
+		text-align: center;
+		gap: adapt(16, 10);
+	}
+
+	&__title {
+	}
+
+	&__subtitle {
+		color: var(--color-accent);
+	}
+
+	&__descr {
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 486px 1fr;
+		align-items: center;
+		gap: 32px adapt(98, 32, $tablet);
+
+		@include media($tablet) {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(24, 10, $mobile);
+	}
+
+	&__item {
+	}
+
+	&__form {
+		box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.6);
+		border: 1px solid var(--color-accent);
+		border-radius: 16px;
+		padding: adapt(40, 20) adapt(40, 12, $tablet);
+	}
+
+	&__form-title {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+
+	&__form-descr {
+		&:not(:last-child) {
+			margin-bottom: adapt(32, 24, $mobile);
+		}
+	}
+
+	&__form-wrapper {
+	}
+
+	&__cta {
+		margin-top: adapt(32, 24, $tablet);
+		padding-top: adapt(32, 20, $tablet);
+		border-top: 1px solid rgba(30, 30, 30, 0.1);
+	}
+
+	&__cta-text {
+		@include reset;
+		text-align: center;
+		font-size: 14px;
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__messengers {
+		justify-content: center;
+	}
+}
+.container {
+}
+.title-2 {
+}
+.title-3 {
+}
+.descr {
+}
+.offer-item {
+	box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+	background: var(--color-white);
+	border-radius: 16px;
+	padding: adapt(24, 12, $mobile);
+	@include flex-column;
+	gap: adapt(16, 8, $mobile);
+	align-items: center;
+	text-align: center;
+	&__image {
+		box-shadow:
+			0 1px 2px -1px rgba(0, 0, 0, 0.1),
+			0 1px 3px 0 rgba(0, 0, 0, 0.1);
+		background: #f8e7ea;
+		@include square(adapt(64, 56, $mobile));
+		border-radius: 50%;
+		@include flex-center;
+
+		svg {
+			@include square(adapt(32, 28, $mobile));
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+		font-size: 16px;
+		max-width: 328px;
+	}
+}
+
+.faq-cta {
+	&__socials {
+	}
+}
+.faq-cta-socials {
+	&__item {
+	}
+
+	&__link {
+	}
+}

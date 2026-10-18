@@ -1,0 +1,109 @@
+@use "../tools" as *;
+
+.about {
+	padding-block: var(--section-padding);
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 32px;
+
+		@include media($mobile) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		flex: 0 1 51%;
+	}
+
+	&__title {
+		@include media($mobile) {
+			text-align: center;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(46, 32);
+		}
+	}
+
+	&__descr {
+		strong {
+			font-family: var(--font-family-title);
+			font-weight: 500;
+			font-size: adapt(20, 18);
+			color: var(--color-accent);
+		}
+
+		&:not(:last-child) {
+			margin-bottom: adapt(46, 32);
+		}
+	}
+
+	&__list {
+		@include reset-list;
+
+		display: flex;
+		gap: 12px 0;
+
+		@include media($mobile) {
+			justify-content: center;
+		}
+	}
+
+	&__item {
+	}
+
+	&__image {
+		min-height: adapt(400, 262, $finishBreakpoint, $mobile);
+		flex: 0 1 44%;
+
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow:
+			0 8px 10px -6px rgba(0, 0, 0, 0.1),
+			0 20px 25px -5px rgba(0, 0, 0, 0.1);
+	}
+}
+
+.about-item {
+	padding-inline: adapt(24, 12);
+	border-right: 1px solid var(--color-gray-light);
+
+	@include media($mobile) {
+		text-align: center;
+	}
+
+	&:first-child {
+		padding-left: 0;
+
+		@include media($mobile) {
+			flex-shrink: 0;
+		}
+	}
+
+	&:last-child {
+		padding-right: 0;
+		border-right: unset;
+	}
+
+	&__number {
+		@include reset;
+
+		font-family: var(--font-family-secondary);
+		font-size: 30px;
+		line-height: 120%;
+		color: var(--color-accent);
+
+		&:not(:last-child) {
+			margin-bottom: 4px;
+		}
+	}
+
+	&__text {
+		@include reset;
+
+		font-size: 14px;
+		line-height: 120%;
+	}
+}

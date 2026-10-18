@@ -1,0 +1,164 @@
+@use "../tools" as *;
+
+.faq {
+	padding-block: var(--section-padding);
+	background: linear-gradient(135deg, #f4efe8 0%, #f9eced 100%);
+
+	&__container {
+	}
+
+	&__header {
+		text-align: center;
+
+		&:not(:last-child) {
+			margin-bottom: adapt(48, 32);
+		}
+	}
+
+	&__title {
+	}
+
+	&__descr {
+	}
+
+	&__list {
+		@include reset-list;
+
+		display: flex;
+		flex-direction: column;
+		gap: adapt(16, 10);
+
+		&:not(:last-child) {
+			margin-bottom: adapt(48, 32);
+		}
+	}
+
+	&__item {
+	}
+
+	&__cta {
+	}
+}
+
+.faq-item {
+	background-color: var(--color-white);
+	border: 1px solid var(--color-gray-light-2);
+	border-radius: 16px;
+
+	&__btn {
+		@include reset-btn;
+
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 4px;
+
+		max-width: 100%;
+		width: 100%;
+		padding: adapt(28, 16) adapt(24, 10);
+	}
+
+	&__title {
+		@include reset;
+
+		color: var(--color-dark);
+		font-family: var(--font-family-title);
+		font-weight: 500;
+		font-size: adapt(18, 16);
+		line-height: 120%;
+	}
+
+	&__icon {
+		color: var(--color-text-main);
+		transition: all 0.3s;
+
+		svg {
+			display: block;
+		}
+
+		.spoiler-active & {
+			transform: rotate(180deg);
+		}
+	}
+
+	&__content {
+	}
+
+	&__descr {
+		font-size: 16px;
+		padding: 0px adapt(24, 10) adapt(28, 16);
+	}
+}
+
+.faq-cta {
+	background: var(--color-accent);
+	border-radius: 16px;
+	box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+	padding: adapt(24, 12);
+	text-align: center;
+
+	&__title {
+		color: var(--color-white);
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+
+	&__socials-box {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+
+		@include media($mobile) {
+			flex-direction: column;
+		}
+	}
+
+	&__text {
+		@include reset;
+
+		color: var(--color-white);
+		font-size: 16px;
+		line-height: 120%;
+	}
+
+	&__socials {
+	}
+}
+
+.faq-cta-socials {
+	@include reset-list;
+
+	display: flex;
+	align-items: center;
+	gap: adapt(12, 8);
+	flex-wrap: wrap;
+
+	&__item {
+	}
+
+	&__link {
+		text-decoration: none;
+
+		--icon-bg: url("../../../public/images/icons/message-icon.svg");
+		--width: 16px;
+		gap: 8px;
+
+		background: var(--color-white);
+		border: 1px solid var(--color-accent-light);
+		border-radius: 36px;
+		padding: 5px adapt(11, 9);
+
+		color: var(--color-accent);
+		font-weight: 500;
+		font-size: 14px;
+
+		transition: all 0.3s;
+
+		@include hover {
+			opacity: 0.7;
+		}
+	}
+}

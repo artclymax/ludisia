@@ -1,0 +1,43 @@
+@use "../tools" as *;
+
+.scroll-to-top {
+	position: fixed;
+	z-index: 2;
+	bottom: var(--container-padding);
+	right: container-padding(1360px);
+	flex-shrink: 0;
+	@include square(40px);
+	padding: 12px;
+	border-radius: 10px;
+	color: var(--color-white);
+	box-shadow: 0 2px 10px -6px rgba(0, 0, 0, 0.2);
+	background: linear-gradient(135deg, #f4efe8 0%, #f9eced 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--color-accent);
+
+	transform: translateY(100%);
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+
+	transition: all 0.3s;
+
+	&.active {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+		pointer-events: initial;
+	}
+	svg {
+		transform: translateY(-2px);
+		transition: all 0.3s;
+	}
+
+	@include hover {
+		svg {
+			transform: translateY(-4px);
+		}
+	}
+}

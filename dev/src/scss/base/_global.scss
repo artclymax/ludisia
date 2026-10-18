@@ -1,0 +1,94 @@
+@use "../tools" as *;
+@use "../components/typography" as *;
+
+html {
+	box-sizing: border-box;
+	font-size: var(--font-size-html);
+	min-height: 100%;
+	scroll-behavior: smooth;
+	scrollbar-gutter: stable;
+
+	//@include custom-scroll(var(--color-gray), var(--color-accent));
+}
+
+body {
+	min-width: rem($finishBreakpoint); // ! сайт будет масштабироваться
+	min-height: 100dvh;
+	font-family: var(--font-family-main);
+	font-size: var(--font-size);
+	font-weight: 400;
+
+	color: var(--color-text-main);
+	background: var(--color-white);
+
+	.open-header-menu &,
+	.open-phone-box &,
+	.open-phone-menu &,
+	.active-modal &,
+	.open-menu & {
+		overflow: hidden;
+	}
+	* {
+		line-height: var(--line-height);
+		letter-spacing: var(--letter-spacing);
+	}
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+	min-height: 100dvh;
+	position: relative;
+	& > main {
+		flex: 1 1 auto;
+	}
+}
+
+.container {
+	max-width: calc(var(--container-width) + (var(--container-padding) * 2));
+	padding-inline: var(--container-padding);
+	margin: 0 auto;
+
+	&--narrow {
+		--container-width: 996px;
+	}
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	//margin-top: var(--header-height);
+}
+
+.section {
+	padding-block: var(--section-padding);
+}
+.section-full {
+	padding-block: var(--section-padding);
+}
+.section-padding-top {
+	padding-top: var(--section-padding);
+}
+.section-padding-bottom {
+	padding-bottom: var(--section-padding);
+}
+.header {
+	position: relative;
+	z-index: 55;
+}
+
+.index-section {
+	padding-bottom: var(--section-padding);
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: var(--font-family-title);
+		color: var(--color-dark);
+	}
+}

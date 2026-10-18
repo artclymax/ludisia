@@ -1,0 +1,81 @@
+@use "../tools" as *;
+
+.cookie-banner {
+	position: fixed;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	color: inherit;
+	z-index: 9999;
+	transition: all 0.3s;
+	color: var(--color-dark);
+
+	&.hide {
+		display: none;
+	}
+
+	&__container {
+	}
+
+	&__wrapper {
+		padding: adapt(20, 12) adapt(44, 10);
+		display: flex;
+		gap: adapt(20, 16);
+		justify-content: space-between;
+		align-items: center;
+		
+		border-radius: 16px;
+		border: 1px solid #f4efe8;
+		box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+		background: var(--color-white);
+
+		@include media($tablet) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__content {
+		//@include reset;
+		@include reset-child;
+		//font-family: var(--font-family-title);
+		//font-weight: 400;
+		font-size: adapt(16, 14);
+		flex: 0 1 652px;
+
+		a {
+			color: var(--color-accent);
+			transition: all 0.3s;
+			@include hover {
+				//opacity: 0.7;
+				color: var(--color-accent-hover);
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		gap: adapt(20, 16);
+		//flex: 0 1 260px;
+		//flex: 1 1 30%;
+		@include media($mobile-sm) {
+			flex: 1 1 100%;
+			width: 100%;
+		}
+	}
+
+	&__btn.btn {
+		padding-inline: 24px;
+		@include media($mobile-sm) {
+			flex: 1;
+			max-width: 100%;
+			min-width: initial;
+		}
+	}
+	&__btn.btn--stroke {
+		//color: var(--color-dark-2);
+		box-shadow: none;
+		@include hover {
+			//color: var(--color-white);
+		}
+	}
+}

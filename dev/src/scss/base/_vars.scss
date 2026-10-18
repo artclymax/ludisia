@@ -1,0 +1,46 @@
+@use "../tools" as *;
+
+:root {
+	--color-0: rgba(0, 0, 0, 0);
+	--color-black: #000;
+	--color-white: #fff;
+
+	// Colors
+	--color-text-main: #6b6b6b;
+	--color-dark: #1e1e1e;
+	--color-dark-2: #343434;
+	--color-light: #fcf8f7;
+	--color-light-2: #faf2f0;
+	--color-light-3: #f4f4f4;
+	--color-gray: #bbb;
+	--color-gray-2: #8e8e8e;
+	--color-gray-light: #e1d9d6;
+	--color-gray-light-2: #e8e8e8;
+
+	--color-accent: #b66a75;
+	--color-accent-hover: #cd6474;
+	--color-accent-light: #e8d2d5;
+
+	// translusent (полупрозрачные)
+
+	// Layouts
+	--header-height: #{adapt(82, 60)};
+	--section-padding: #{adapt(96, 56)};
+	//--section-padding-05: #{adapt(60, 30)};
+
+	--container-width: 1200px;
+	--container-padding: 10px; //! даже если контейнер на весь экран, отступы оставь а ширину сделай на 100%
+
+	// Fonts
+	--font-size-html: 100%; // 1rem = 1px ===> calc(1 / 16 * 100%)
+	--font-size: #{adapt(18, 16)};
+	--font-family-main: "Manrope-VF", "Manrope", sans-serif;
+	--font-family-title: "PlayfairDisplay-VF", "PlayfairDisplay", "Playfair Display", serif;
+	--font-family-secondary: "Inter-VF", "Inter_18pt", "Inter", sans-serif;
+	//--font-family-title: "CormorantGaramond-VF", "Cormorant Garamond", serif;
+	//--font-family-title-second: "Forum", serif;
+	//--font-family-mono: "IBM Plex Mono", monospace;
+
+	--line-height: 140%;
+	--letter-spacing: auto;
+}

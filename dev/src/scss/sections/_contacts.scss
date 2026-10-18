@@ -1,0 +1,183 @@
+@use "../tools" as *;
+
+.contacts {
+	&__container {
+		@include flex-column;
+		gap: adapt(64, 32, $mobile);
+	}
+
+	&__title {
+		text-align: center;
+	}
+
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 44px adapt(44, 20);
+
+		@include media($mobile) {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__content {
+		box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+		background: var(--color-white);
+		border-radius: 16px;
+		padding: adapt(32, 12, $tablet);
+		@include flex-column;
+		gap: 24px;
+	}
+
+	&__subtitle {
+	}
+
+	&__list {
+		@include reset-list;
+		@include flex-column;
+		gap: adapt(24, 20, $mobile);
+		font-size: 16px;
+	}
+
+	&__item {
+		--width: 48px;
+		--bg-size: 24px;
+		align-items: flex-start;
+		gap: adapt(16, 10, $mobile);
+
+		&::before {
+			border-radius: 16px;
+			background-color: #f8e7ea;
+		}
+	}
+
+	&__item-wrapper {
+		@include flex-column;
+		gap: 8px;
+		align-items: flex-start;
+	}
+
+	&__item-title {
+		@include reset;
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+
+	&__address {
+		font-style: normal;
+	}
+
+	&__label {
+		border: 1px solid rgba(182, 106, 117, 0.3);
+		border-radius: 30px;
+		padding: 8px 12px;
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+
+	&__descr {
+	}
+
+	&__item-list {
+		@include reset-list;
+		@include flex-column;
+		gap: 4px;
+	}
+
+	&__item-list-item {
+	}
+
+	&__item-link {
+	}
+
+	&__social {
+		@include reset-list;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px adapt(24, 10, $tablet);
+		width: 100%;
+	}
+
+	&__map {
+		position: relative;
+		box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+		background: var(--color-white);
+		border-radius: 16px;
+		padding: adapt(16, 12, $tablet);
+		min-height: 400px;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+			border-radius: 14px;
+		}
+	}
+
+	&__map-label {
+		position: absolute;
+		top: adapt(32, 16);
+		left: adapt(32, 16);
+		box-shadow:
+			0 2px 4px -2px rgba(0, 0, 0, 0.1),
+			0 4px 6px -1px rgba(0, 0, 0, 0.1);
+		background: var(--color-white);
+		border-radius: 14px;
+		padding: adapt(10, 8) adapt(16, 10);
+		font-size: 14px;
+		font-weight: 500;
+		color: var(--color-dark);
+		align-items: center;
+		gap: 8px;
+		line-height: 1;
+		--width: 16px;
+	}
+}
+.contacts-socials {
+	&__item {
+		border-radius: 16px;
+		background: linear-gradient(135deg, #f4efe8 0%, rgba(248, 231, 234, 0.5) 100%);
+		flex: 1;
+
+		@include media($tablet) {
+			flex: 1 1 100%;
+		}
+	}
+
+	&__link {
+		padding: adapt(24, 12, $tablet);
+		display: flex;
+		gap: 16px;
+		text-decoration: none;
+		color: inherit;
+		font-size: 16px;
+		transition: all 0.3s;
+		
+		@include hover {
+			opacity: 0.6;
+		}
+	}
+
+	&__icon {
+		border-radius: 16px;
+		@include square(48px);
+		background: var(--color-white);
+		@include flex-center;
+	}
+
+	&__wrapper {
+		@include flex-column;
+		gap: 4px;
+	}
+
+	&__title {
+		@include reset;
+		font-weight: 500;
+		color: var(--color-dark);
+	}
+
+	&__label {
+		@include reset;
+	}
+}

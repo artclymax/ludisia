@@ -1,0 +1,74 @@
+@use "../tools" as *;
+
+.header {
+	position: absolute;
+	top: adapt(20, 10, $tablet);
+	left: 0;
+	width: 100%;
+
+	@include media($tablet) {
+		&::after {
+			content: "";
+			position: absolute;
+			height: 100dvh;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background: linear-gradient(135deg, rgba(244, 239, 232, 0.9) 0%, rgba(249, 236, 237, 0.9) 100%);
+			transform: rotate(-180deg);
+			z-index: 1;
+			opacity: 0;
+			pointer-events: none;
+			visibility: hidden;
+			transition: all 0.3s;
+
+			.open-header-menu & {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+	&__container {
+	}
+
+	&__wrapper {
+		box-shadow: 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+		background: rgba(255, 255, 255, 0.9);
+		border: 1px solid #f4efe8;
+		border-radius: 16px;
+		padding: adapt(10, 5, $tablet) adapt(24, 10);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: adapt(54, 10, $tablet);
+		position: relative;
+		z-index: 2;
+	}
+
+	&__logo {
+		margin-right: auto;
+	}
+
+	&__menu {
+		//flex-grow: 1;
+	}
+
+	&__phone-btn {
+	}
+
+	&__burger-btn {
+	}
+}
+
+.hidden-tablet {
+}
+.icon {
+}
+.btn {
+}
+.phone-btn {
+}
+.visible-tablet {
+}
+.burger-btn {
+}

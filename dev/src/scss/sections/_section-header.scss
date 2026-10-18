@@ -1,0 +1,12 @@
+@use "../tools" as *;
+
+.section-header {
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: adapt(16, 10);
+		}
+	}
+
+	&__descr {
+	}
+}

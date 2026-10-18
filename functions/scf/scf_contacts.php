@@ -1,0 +1,123 @@
+<?php
+
+create_options_page(
+	'Контактные данные',
+	'opt-contacts'
+);
+
+create_fields(
+	'Контактные данные',
+	'opt-contacts',
+	[
+		add_field_text(
+			'custom_email_to',
+			'Email',
+		),
+		add_field_tab(
+			'contacts_tab_section',
+			'Секция',
+		),
+		add_field_text(
+			'contacts_title',
+			'Заголовок',
+		),
+		add_field_text(
+			'contacts_subtitle',
+			'Подзаголовок',
+		),
+		add_field_tab(
+			'contacts_tab_address',
+			'Адрес',
+		),
+		add_field_text(
+			'contacts_address_title',
+			'Заголовок',
+		),
+		add_field_redactor_wysiwyg(
+			'contacts_address',
+			'Адрес',
+		),
+		add_field_text(
+			'contacts_address_text',
+			'Дополнительная информация',
+		),
+		add_field_tab(
+			'contacts_tab_time',
+			'Режим работы',
+		),
+		add_field_text(
+			'contacts_time_title',
+			'Заголовок',
+		),
+		add_field_redactor_wysiwyg(
+			'contacts_time',
+			'Режим работы'
+		),
+		add_field_tab(
+			'contacts_tab_phones',
+			'Телефон',
+		),
+		add_field_text(
+			'contacts_phone_title',
+			'Заголовок',
+		),
+		add_field_repeater(
+			'contacts_phones',
+			'Телефон',
+			[
+				add_field_text(
+					'contacts_phones_phone',
+					'Номер'
+				),
+			]
+		),
+		add_field_tab(
+			'contacts_tab_messengers',
+			'Мессенджеры',
+		),
+		add_field_repeater(
+			'contacts_messengers',
+			'Мессенджеры',
+			[
+				add_field_link(
+					'contacts_messengers_link',
+					'Ссылка'
+				),
+			]
+		),
+		add_field_tab(
+			'contacts_tab_map',
+			'Карта',
+		),
+		add_field_redactor_wysiwyg(
+			'contacts_map',
+			'Карта'
+		),
+		add_field_text(
+			'contacts_map_label',
+			'Ярлык'
+		),
+		add_field_tab(
+			'contacts_tab_social',
+			'Социальные сети',
+		),
+		add_field_repeater(
+			'contacts_social',
+			'Социальные сети',
+			[
+				add_field_image(
+					'contacts_social_image',
+					'Иконка'
+				),
+				add_field_link(
+					'contacts_social_link',
+					'Ссылка'
+				),
+				add_field_text(
+					'contacts_social_text',
+					'Текст'
+				),
+			]
+		),
+	]
+);
